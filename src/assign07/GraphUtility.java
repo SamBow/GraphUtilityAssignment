@@ -14,7 +14,9 @@ import java.util.Scanner;
  * @version February 27, 2019
  */
 public class GraphUtility {
-
+	/*
+	 * Returns whether the graph is Cyclic or not.
+	 */
 	public static <Type> boolean isCyclic(List<Type> sources, List<Type> destinations) throws IllegalArgumentException {
 		// FILL IN + ADD METHOD COMMENT
 		return false;
