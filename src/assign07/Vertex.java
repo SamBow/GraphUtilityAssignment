@@ -12,6 +12,7 @@ public class Vertex<E> implements Comparator<Vertex>{
 	private boolean visited;
 	private Vertex previous;
 	private int distanceFromStart;
+	//TODO private int indegree;
 	
 	// adjacency list
 	private LinkedList<Edge> adj;
