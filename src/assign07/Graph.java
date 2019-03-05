@@ -2,6 +2,7 @@ package assign07;
 
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Represents a directed graph that contains a set of vertices and a set of edges.
@@ -48,5 +49,17 @@ public class Graph<E> implements Comparator<E>{
 	public int compare(E o1, E o2) { 
 		// TODO Auto-generated method stub
 		return 0;
+	}
+	
+	/*
+	 * Returns whether the graph is Cyclic or not.
+	 */
+	public static <Type> boolean isCyclic(List<Type> sources, List<Type> destinations) throws IllegalArgumentException {
+		// FILL IN + ADD METHOD COMMENT
+		//This method must use the depth-first search algorithm presented in lecture to determine whether the graph contains a cycle.
+		for(int i = 0; i < sources.size() && i < destinations.size(); i++) {
+			((Vertex) sources.get(i)).addEdge((Vertex) destinations.get(i));
+		}
+		return false;
 	}
 }

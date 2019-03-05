@@ -6,7 +6,11 @@ public class Edge {
 	private Vertex dst;
 	
 	public Edge(Vertex dst) {
+		if(dst == null) {
+			throw new NullPointerException();
+		}
 		this.dst = dst;
+		dst.incIndegree();
 	}
 	
 	public Vertex getOtherVertex() {

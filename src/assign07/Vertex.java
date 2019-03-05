@@ -10,9 +10,8 @@ public class Vertex<E> implements Comparator<Vertex>{
 	private E element;
 	
 	private boolean visited;
-	private Vertex previous;
-	private int distanceFromStart;
-	//TODO private int indegree;
+	//private Vertex previous;
+	private int indegree;
 	
 	// adjacency list
 	private LinkedList<Edge> adj;
@@ -34,12 +33,12 @@ public class Vertex<E> implements Comparator<Vertex>{
 		return adj.iterator();
 	}
 	
-	public void setDistanceFromStart(int d) {
-		distanceFromStart = d;
+	public void incIndegree() {
+		indegree++;
 	}
 	
-	public int getDistanceFromStart() {
-		return distanceFromStart;
+	public int getIndegree() {
+		return indegree;
 	}
 	
 	public LinkedList<Edge> getEdges() {
@@ -50,18 +49,25 @@ public class Vertex<E> implements Comparator<Vertex>{
 		return visited;
 	}
 	
-	public void setPrevious(Vertex x) {
-		previous = x;
-	}
-	
-	public Vertex getPrevious() {
-		return previous;
-	}
+//	public void setPrevious(Vertex x) {
+//		previous = x;
+//	}
+//	
+//	public Vertex getPrevious() {
+//		return previous;
+//	}
 	
 	@Override
 	public int compare(Vertex o1, Vertex o2) {
 		// TODO Auto-generated method stub
-		return 0;
+		if(o1.indegree - o2.indegree < 0) {
+			return -1;
+		}
+		else if(o1.indegree - o2.indegree > 0)
+		{
+			return 1;
+		}	
+		else return 0;
 	}
 
 }
