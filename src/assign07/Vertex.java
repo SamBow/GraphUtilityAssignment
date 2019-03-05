@@ -19,6 +19,7 @@ public class Vertex<E> implements Comparator<Vertex>{
 	public Vertex(E element) {
 		this.element = element;
 		this.adj = new LinkedList<Edge>();
+		this.indegree = 0;
 	}
 	
 	public E getElement() {
